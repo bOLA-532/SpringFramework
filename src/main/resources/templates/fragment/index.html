@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM
+        "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf">
+<html lang="en" xmls=" http://w3.org" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragment/fragments:: head"></head>
+
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Company</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+    <tr th:each = "drink : ${drinks}">
+
+        <td th:text="${drink.name></td>
+         <td th:text="${drink.price></td>
+        <td th:text="${drink.conpany></td>
+         <td th:text="${drink.type></td>
+        <td>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+
+</html>

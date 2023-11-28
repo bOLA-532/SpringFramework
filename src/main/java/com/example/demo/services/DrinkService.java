@@ -1,4 +1,4 @@
-package com.example.demo.sevrvices;
+package com.example.demo.services;
 
 import com.example.demo.Drink;
 

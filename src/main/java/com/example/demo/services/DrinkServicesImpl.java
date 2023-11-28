@@ -1,9 +1,8 @@
-package com.example.demo.sevrvices;
+package com.example.demo.services;
 
 import com.example.demo.Drink;
 import com.example.demo.repositary.DrinkRepositary;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -62,5 +61,5 @@ public class DrinkServicesImpl implements DrinkService {
     @Override
     public void deleteDrink(long id) {
         drinkRepositary.deleteById(id);
-    };
+    }
 }
