@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public interface DrinkRepositary extends JpaRepository<Drink, Long> {
+public interface DrinkRepository extends JpaRepository<Drink, Long> {
     // @Query("")
     //
 }

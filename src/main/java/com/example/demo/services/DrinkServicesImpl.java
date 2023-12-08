@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.Drink;
-import com.example.demo.repositary.DrinkRepositary;
+import com.example.demo.repositary.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +12,16 @@ import java.util.Optional;
 public class DrinkServicesImpl implements DrinkService {
 
     @Autowired
-    DrinkRepositary drinkRepositary;
+    DrinkRepository drinkRepository;
 
     @Override
     public Drink saveDrink(Drink drink) {
-        return null;
+        return drinkRepository.save(drink);
     }
 
     @Override
     public Drink getDrinkById(long id) {
-        Optional<Drink> drink = drinkRepositary.findById(id);
+        Optional<Drink> drink = drinkRepository.findById(id);
         Drink emptyDrink = null;
         if (drink.isPresent()) {
             emptyDrink = drink.get();
@@ -33,12 +33,12 @@ public class DrinkServicesImpl implements DrinkService {
 
     @Override
     public List<Drink> getAllDrinks() {
-        return drinkRepositary.findAll();
+        return drinkRepository.findAll();
     }
 
     @Override
     public Drink updateDrink(Drink drink) {
-        Optional<Drink> optionalDrink = drinkRepositary.findById(drink.getId());
+        Optional<Drink> optionalDrink = drinkRepository.findById(drink.getId());
 
         if (optionalDrink.isPresent()) {
             Drink updateDrink = new Drink();
@@ -50,7 +50,7 @@ public class DrinkServicesImpl implements DrinkService {
             updateDrink.setId(drink.getId());
             updateDrink.setIngredients(drink.getIngredients());
 
-            drinkRepositary.save(updateDrink);
+            drinkRepository.save(updateDrink);
             return updateDrink;
 
         } else {
@@ -60,6 +60,6 @@ public class DrinkServicesImpl implements DrinkService {
 
     @Override
     public void deleteDrink(long id) {
-        drinkRepositary.deleteById(id);
+        drinkRepository.deleteById(id);
     }
 }
